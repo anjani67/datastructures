@@ -1,0 +1,15 @@
+#Implement a function that removes all the even elements from a given list.Name it remove_even(lst)
+Sample Input#
+lst = [1,2,4,5,10,6,3]
+Sample Output#
+lst = [1,5,3]
+
+Code in python:
+def remove_even(lst):
+    return [element for element in lst if element % 2 != 0]
+lst = [1,2,4,5,10,6,3]
+remove_even(lst)
+
+
+
+#
