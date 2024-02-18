@@ -1,0 +1,61 @@
+#Implement Breadth First Search traversal in python.It is a level-by-level searcing algorithm for the graph,so we are going to use our already-implemented class of graph for this task.
+Input:
+A directed graph in the form of an adjacency list and an integer indicating the stating vertex number(source).
+Output:
+A string containing the vertices of the graph listed in the correct order of traversal.
+Sample Input#
+(0,1)
+(0,2)
+(1,3)
+(2,3)
+Sample Output#
+0123
+
+
+
+#Code:
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next_element = None
+
+class MyQueue:
+    def __init__(self):
+        self.queue_list = []
+        self.queue_size = 0
+
+    def is_Empty(self):
+        return self.queue_size == 0
+
+    def front(self):
+        if self.is_empty():
+            return None
+        return self.queue_list[0]
+
+    def rear(self):
+        if self.is_empty():
+              return None
+        return self.queue_list[-1]
+
+    def size(self):
+        return self.queue_size
+
+    def enqueue(self,value):
+        self.queue_size += 1
+        self.queue_list.append(value)
+
+    def dequeue(self):
+        if self.is_empty():
+            return None
+        front = self.front()
+        self.queue_list.remove(self.front())
+        self.queue_size -= 1
+        return front
+
+class MyStack:
+    def __init__(self):
+        self.stack_list = []
+        self.stack_size = 0
+ 
+    def is_Empty(self):
+        return self.stack_size == 0       
